@@ -1,0 +1,6 @@
+x = raw_input(('write the filename : '))
+extension= x.split('.')
+dict1={"py":"python", "txt":"text", "exe":"excel"}
+
+l = dict1[extension[-1]]
+print('the extension of the file is : ' + str(l))
