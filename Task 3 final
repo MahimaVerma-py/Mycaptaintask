@@ -1,0 +1,17 @@
+def most_frequency(word):
+    
+    all_freq = {}
+
+
+    for i in word:
+        if i in all_freq:
+            all_freq[i] += 1
+        else:
+            all_freq[i] = 1
+            
+    
+    return all_freq
+
+word=raw_input('input:')
+print('output:')
+print(most_frequency(word))
