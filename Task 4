@@ -1,0 +1,41 @@
+import csv
+
+def write_in_csv(info_list):
+    with open('student_administration', 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        if csvfile.tell() == 0:
+            writer = writerow(['Name', 'Age', 'Contact Number', 'Email address'])
+        writer = writerow(info_list)
+        
+
+
+if __name__ = '__main__':
+    condition = True
+    studentsno= 1
+    
+    while(condition):
+        studentinfo = raw_input('Enter your students information for student number {} in the format ( Name Age Contact_number Email_address): '.format(studentsno))
+        
+#spliting 
+    
+        studentinfo_list = studentinfo.split(' ')
+        
+    
+#checking information
+        print(\n'The entered infromation is'\n 'Name : {} ' \n 'Age : {} '\n 'Contact Number : {} ' \n 'Email Address : {} '.format(studentinfo_list [0], studentinfo_list [1], studentinfo_list [2], studentinfo_list[3]))
+        
+        choice= raw_input('Is the information correct ? (yes/no))
+        if choice == 'yes':
+            write_in_csv(studentinfo_list)
+    
+#adding another student
+            student_check = raw_input('Do you want to add details of another student (yes/no) : ')
+            if student_check == 'yes':
+                condition = True
+                studentsno = studentsno + 1
+            elif student_check == 'no':
+                condition = False
+        elif choice == 'no':
+            print(\n 'Please re-enter the values')
+            
+    
